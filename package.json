@@ -9,7 +9,7 @@
     "twitter": "@coffeedoughnuts"
   },
   "scripts": {
-    "start": "electron src"
+    "start": "SOURCEY_ENV=dev electron src"
   },
   "devDependencies": {
     "electron-prebuilt": "^0.30.2"
