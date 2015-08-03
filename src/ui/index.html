@@ -13,6 +13,14 @@
     <script>
         var remote = require( "remote" );
         console.log( "app version " + remote.require( "app" ).getVersion() );
+        
+        var ipc = require( "ipc" );
+        ipc.on( "dev-refresh", function(message) {
+            if (message) {
+                window.location.reload();
+            }
+        } );
+        
         var app = require( "./index" );
         app.start();
     </script>

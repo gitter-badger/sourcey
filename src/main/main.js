@@ -1,5 +1,6 @@
 var app = require( "app" );
 var BrowserWindow = require( "browser-window" );
+var chokidar = require( "chokidar" );
 
 var mainWindow = null;
 
@@ -24,6 +25,12 @@ app.on( "ready", function() {
     if ( process.env.SOURCEY_ENV === "dev" ) {
         
         mainWindow.openDevTools();
+        
+        chokidar
+            .watch( `${__dirname}/..` )
+            .on( "change", function() {
+                mainWindow.webContents.send( "dev-refresh", true );
+            } );
         
     }
 
