@@ -1,0 +1,17 @@
+{
+  "name": "Sourcey",
+  "version": "0.0.1",
+  "description": "A friendly desktop git client for OS X, Linux and Windows.",
+  "keywords": "git client electron atom-shell",
+  "author": {
+    "name": "Daniel Baker",
+    "email": "danbaker@me.com",
+    "twitter": "@coffeedoughnuts"
+  },
+  "scripts": {
+    "start": "electron src"
+  },
+  "devDependencies": {
+    "electron-prebuilt": "^0.30.2"
+  }
+}

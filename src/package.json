@@ -1,0 +1,12 @@
+{
+  "name": "Sourcey",
+  "version": "0.0.1",
+  "description": "A friendly desktop git client for OS X, Linux and Windows",
+  "main": "main/main.js",
+  "dependencies": {
+    "bootstrap": "^3.3.5",
+    "chokidar": "^1.0.5",
+    "nodegit": "^0.4.1",
+    "react": "^0.13.3"
+  }
+}
