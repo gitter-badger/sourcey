@@ -13,7 +13,7 @@ console.log( "app version " + remote.require( "app" ).getVersion() );
 var start_app = function() {
     var HelloMessage = require( "./components/hello-world" );
     var mountNode = document.querySelector( "#mountNode" );
-    React.render( React.createElement( HelloMessage, { name: "World!" } ), mountNode );
+    React.render( <HelloMessage name="World" />, mountNode );
 };
 
 start_app();
