@@ -9,9 +9,19 @@
     "twitter": "@coffeedoughnuts"
   },
   "scripts": {
-    "start": "SOURCEY_ENV=dev electron src"
+    "transpile": "babel src/ui --out-dir '.tmp/ui' --source-maps inline",
+    "clean-tmp": "mkdir -p .tmp/ui && rm -rf .tmp/main && rm -f .tmp/bundle.js && rm -f .tmp/index.html && rm -f .tmp/package.json",
+    "copy-html": "cp src/ui/index.html .tmp/ui/index.html",
+    "copy-manifest": "cp src/package.json .tmp/package.json",
+    "copy-dependencies": "rsync -raz src/node_modules .tmp/",
+    "copy-main": "cp -r src/main .tmp/main",
+    "sync-files": "npm run copy-html && npm run copy-manifest && npm run copy-dependencies && npm run copy-main",
+    "electron": "SOURCEY_ENV=dev electron .tmp",
+    "start": "npm run clean-tmp && npm run transpile && npm run sync-files && npm run electron"
   },
   "devDependencies": {
+    "babel": "^5.8.20",
+    "babel-core": "^5.8.20",
     "electron-prebuilt": "^0.30.2"
   }
 }

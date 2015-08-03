@@ -9,19 +9,6 @@
         and Electron <script>document.write( process.versions[ 'electron' ] );</script>.
         <br/>
         <div id="mountNode"></div>
+        <script type="text/javascript" src="index.js"></script>
     </body>
-    <script>
-        var remote = require( "remote" );
-        console.log( "app version " + remote.require( "app" ).getVersion() );
-        
-        var ipc = require( "ipc" );
-        ipc.on( "dev-refresh", function(message) {
-            if (message) {
-                window.location.reload();
-            }
-        } );
-        
-        var app = require( "./index" );
-        app.start();
-    </script>
 </html>
