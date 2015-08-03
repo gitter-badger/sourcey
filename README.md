@@ -44,5 +44,8 @@ Submit a PR when you're ready to merge into `develop` - not `master`.
 
 ## TODO
 
+- Better npm start script. Needs to:
+    - transpile JSX
+    - transpile ES6
 - npm build script
 - npm release script
