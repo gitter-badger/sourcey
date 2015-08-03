@@ -7,9 +7,13 @@
         <h1>Hello World!</h1>
         We are using io.js <script>document.write( process.version );</script>
         and Electron <script>document.write( process.versions[ 'electron' ] );</script>.
+        <br/>
+        <div id="mountNode"></div>
     </body>
     <script>
         var remote = require( "remote" );
         console.log( "app version " + remote.require( "app" ).getVersion() );
+        var app = require( "./index" );
+        app.start();
     </script>
 </html>
