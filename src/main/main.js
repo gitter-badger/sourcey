@@ -15,23 +15,23 @@ app.on( "ready", function() {
         width: 800,
         height: 600
     } );
-    
+
     mainWindow.loadUrl( "file://" + __dirname + "/../ui/index.html" );
-    
+
     mainWindow.on( "closed", function() {
         mainWindow = null;
     } );
-    
+
     if ( process.env.SOURCEY_ENV === "dev" ) {
-        
+
         mainWindow.openDevTools();
-        
+
         chokidar
-            .watch( `${__dirname}/..` )
+            .watch( `${__dirname}/../.refresh` )
             .on( "change", function() {
                 mainWindow.webContents.send( "dev-refresh", true );
             } );
-        
+
     }
 
 } );
