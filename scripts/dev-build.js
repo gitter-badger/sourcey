@@ -1,5 +1,6 @@
 var syncToTmp = require( "./sync-tmp" );
 var transpile = require( "./transpile" );
+var colors = require( "colors" );
 
 module.exports = function() {
     return new Promise( function( fulfill, reject ) {
