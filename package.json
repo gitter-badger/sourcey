@@ -10,7 +10,8 @@
   },
   "scripts": {
     "start": "SOURCEY_ENV=dev node scripts/dev-start.js",
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js",
+    "setup": "npm install && cd src && npm install && cd .."
   },
   "devDependencies": {
     "babel": "^5.8.20",
