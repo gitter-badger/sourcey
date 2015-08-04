@@ -6,6 +6,7 @@
   "dependencies": {
     "bootstrap": "^3.3.5",
     "chokidar": "^1.0.5",
+    "jquery": "^2.1.4",
     "nodegit": "^0.4.1",
     "react": "^0.13.3"
   }
