@@ -5,6 +5,8 @@ var fs = require( "fs" );
 var electron = require( "electron-prebuilt" );
 var proc = require( "child_process" );
 
+var electronLog = path.normalize( __dirname + "/../logs/electron.log" );
+fs.writeFileSync( electronLog, "" );
 build()
     .then( function() {
         chokidar
@@ -20,9 +22,9 @@ build()
         var tmpDir = path.normalize( __dirname + "/../.tmp" );
         var electronProcess = proc.spawn( electron, [ tmpDir ] );
         electronProcess.stdout.on( "data", function( data ) {
-            console.log( 'electron: ' + data );
+            fs.appendFile( electronLog, data )
         } );
         electronProcess.stderr.on( "data", function( data ) {
-            console.error( 'electron: ' + data );
+            fs.appendFile( electronLog, data )
         } );
     } );
