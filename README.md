@@ -41,11 +41,3 @@ Now you have a development version of the project installed, you can make use of
 Sourcey follows the gitflow principles where possible. If you want to contribute, please work on a feature branch prefixed `feature/` with a short descriptive feature name (e.g. `feature/added_commit_btn`).
 
 Submit a PR when you're ready to merge into `develop` - not `master`.
-
-## TODO
-
-- Better npm start script. Needs to:
-    - transpile JSX
-    - transpile ES6
-- npm build script
-- npm release script
