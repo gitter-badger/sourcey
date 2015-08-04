@@ -29,6 +29,7 @@ app.on( "ready", function() {
         chokidar
             .watch( `${__dirname}/../.refresh` )
             .on( "change", function() {
+                console.log( "refresh signal received! pinging app..." );
                 mainWindow.webContents.send( "dev-refresh", true );
             } );
 
