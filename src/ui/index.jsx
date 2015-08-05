@@ -1,4 +1,6 @@
 var React = require( "react" );
+var remote = require( "remote" );
+var App = require( "./components/app" );
 
 var ipc = require( "ipc" );
 ipc.on( "dev-refresh", function(message) {
@@ -7,13 +9,11 @@ ipc.on( "dev-refresh", function(message) {
     }
 } );
 
-var remote = require( "remote" );
 console.log( "app version " + remote.require( "app" ).getVersion() );
 
 var start_app = function() {
-    var HelloMessage = require( "./components/hello-world" );
     var mountNode = document.querySelector( "#mountNode" );
-    React.render( <HelloMessage />, mountNode );
+    React.render( <App repo={null} />, mountNode );
 };
 
 start_app();
