@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "A friendly desktop git client for OS X, Linux and Windows",
   "main": "main/main.js",
+  "engines": {
+    "electron": "0.30.2",
+    "atom-shell": "0.30.2"
+  },
   "dependencies": {
     "bootstrap": "^3.3.5",
     "chokidar": "^1.0.5",
